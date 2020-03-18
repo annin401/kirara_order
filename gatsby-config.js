@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
+    'gatsby-plugin-emotion',
     `gatsby-plugin-react-helmet`,
     // `gatsby-source-filesystem`,
     `gatsby-transformer-sharp`,
