@@ -2043,6 +2043,11 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___isTSX' |
   'pluginCreator___pluginOptions___allExtensions' |
   'pluginCreator___pluginOptions___fileName' |
+  'pluginCreator___pluginOptions___content' |
+  'pluginCreator___pluginOptions___printRejected' |
+  'pluginCreator___pluginOptions___develop' |
+  'pluginCreator___pluginOptions___tailwind' |
+  'pluginCreator___pluginOptions___whitelist' |
   'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
@@ -2231,6 +2236,11 @@ export type SitePluginFieldsEnum =
   'pluginOptions___isTSX' |
   'pluginOptions___allExtensions' |
   'pluginOptions___fileName' |
+  'pluginOptions___content' |
+  'pluginOptions___printRejected' |
+  'pluginOptions___develop' |
+  'pluginOptions___tailwind' |
+  'pluginOptions___whitelist' |
   'pluginOptions___path' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
@@ -2346,6 +2356,11 @@ export type SitePluginPluginOptions = {
   isTSX?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
   fileName?: Maybe<Scalars['String']>;
+  content?: Maybe<Array<Maybe<Scalars['String']>>>;
+  printRejected?: Maybe<Scalars['Boolean']>;
+  develop?: Maybe<Scalars['Boolean']>;
+  tailwind?: Maybe<Scalars['Boolean']>;
+  whitelist?: Maybe<Array<Maybe<Scalars['String']>>>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
@@ -2354,6 +2369,11 @@ export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<StringQueryOperatorInput>;
+  printRejected?: Maybe<BooleanQueryOperatorInput>;
+  develop?: Maybe<BooleanQueryOperatorInput>;
+  tailwind?: Maybe<BooleanQueryOperatorInput>;
+  whitelist?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
