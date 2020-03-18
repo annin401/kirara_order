@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/tailwind.css';
 
-const IndexPage = () => <p>Hello</p>;
+const IndexPage = () => {
+  return <p>Hello</p>;
+};
 
 export default IndexPage;
