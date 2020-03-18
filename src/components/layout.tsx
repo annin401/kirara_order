@@ -3,7 +3,7 @@ import Header from './header';
 import { useStaticQuery, graphql } from 'gatsby';
 
 type LayoutProps = {
-  children?: React.ReactChild[];
+  children?: React.ReactNode;
 };
 
 const Layout = (props: LayoutProps) => {
