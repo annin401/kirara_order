@@ -78,8 +78,6 @@ export type Directory = Node & {
   birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   birthtimeMs?: Maybe<Scalars['Float']>;
-  blksize?: Maybe<Scalars['Int']>;
-  blocks?: Maybe<Scalars['Int']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -201,8 +199,6 @@ export type DirectoryFieldsEnum =
   'ctime' |
   'birthtime' |
   'birthtimeMs' |
-  'blksize' |
-  'blocks' |
   'id' |
   'parent___id' |
   'parent___parent___id' |
@@ -322,8 +318,6 @@ export type DirectoryFilterInput = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -384,10 +378,6 @@ export type File = Node & {
   birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   birthtimeMs?: Maybe<Scalars['Float']>;
-  blksize?: Maybe<Scalars['Int']>;
-  blocks?: Maybe<Scalars['Int']>;
-  /** Copy file to static directory and return public url to it */
-  publicURL?: Maybe<Scalars['String']>;
   childImageSharp?: Maybe<ImageSharp>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -510,9 +500,6 @@ export type FileFieldsEnum =
   'ctime' |
   'birthtime' |
   'birthtimeMs' |
-  'blksize' |
-  'blocks' |
-  'publicURL' |
   'childImageSharp___fixed___base64' |
   'childImageSharp___fixed___tracedSVG' |
   'childImageSharp___fixed___aspectRatio' |
@@ -723,9 +710,6 @@ export type FileFilterInput = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
-  publicURL?: Maybe<StringQueryOperatorInput>;
   childImageSharp?: Maybe<ImageSharpFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -1387,9 +1371,6 @@ export type QueryFileArgs = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
-  publicURL?: Maybe<StringQueryOperatorInput>;
   childImageSharp?: Maybe<ImageSharpFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -1438,8 +1419,6 @@ export type QueryDirectoryArgs = {
   ctime?: Maybe<DateQueryOperatorInput>;
   birthtime?: Maybe<DateQueryOperatorInput>;
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
-  blksize?: Maybe<IntQueryOperatorInput>;
-  blocks?: Maybe<IntQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2064,14 +2043,13 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___isTSX' |
   'pluginCreator___pluginOptions___allExtensions' |
   'pluginCreator___pluginOptions___fileName' |
-  'pluginCreator___pluginOptions___name' |
-  'pluginCreator___pluginOptions___path' |
-  'pluginCreator___pluginOptions___ignore' |
+  'pluginCreator___pluginOptions___prefixes' |
   'pluginCreator___pluginOptions___content' |
   'pluginCreator___pluginOptions___printRejected' |
   'pluginCreator___pluginOptions___develop' |
   'pluginCreator___pluginOptions___tailwind' |
   'pluginCreator___pluginOptions___whitelist' |
+  'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -2259,14 +2237,13 @@ export type SitePluginFieldsEnum =
   'pluginOptions___isTSX' |
   'pluginOptions___allExtensions' |
   'pluginOptions___fileName' |
-  'pluginOptions___name' |
-  'pluginOptions___path' |
-  'pluginOptions___ignore' |
+  'pluginOptions___prefixes' |
   'pluginOptions___content' |
   'pluginOptions___printRejected' |
   'pluginOptions___develop' |
   'pluginOptions___tailwind' |
   'pluginOptions___whitelist' |
+  'pluginOptions___path' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'ssrAPIs' |
@@ -2381,14 +2358,13 @@ export type SitePluginPluginOptions = {
   isTSX?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
   fileName?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  path?: Maybe<Scalars['String']>;
-  ignore?: Maybe<Array<Maybe<Scalars['String']>>>;
+  prefixes?: Maybe<Array<Maybe<Scalars['String']>>>;
   content?: Maybe<Array<Maybe<Scalars['String']>>>;
   printRejected?: Maybe<Scalars['Boolean']>;
   develop?: Maybe<Scalars['Boolean']>;
   tailwind?: Maybe<Scalars['Boolean']>;
   whitelist?: Maybe<Array<Maybe<Scalars['String']>>>;
+  path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2396,14 +2372,13 @@ export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  ignore?: Maybe<StringQueryOperatorInput>;
+  prefixes?: Maybe<StringQueryOperatorInput>;
   content?: Maybe<StringQueryOperatorInput>;
   printRejected?: Maybe<BooleanQueryOperatorInput>;
   develop?: Maybe<BooleanQueryOperatorInput>;
   tailwind?: Maybe<BooleanQueryOperatorInput>;
   whitelist?: Maybe<StringQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
