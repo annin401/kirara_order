@@ -6,7 +6,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "date": "2018_1"
+      "date": "2018-1"
     },
     {
       "lank": 22,
@@ -14,7 +14,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "date": "2018_2"
+      "date": "2018-2"
     },
     {
       "lank": 22,
@@ -22,7 +22,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "date": "2018_3"
+      "date": "2018-3"
     }
   ]
 }

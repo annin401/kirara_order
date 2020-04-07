@@ -6,7 +6,7 @@
       "isColor": false,
       "isDouble": true,
       "isGuest": true,
-      "date": "2020_1"
+      "date": "2020-1"
     },
     {
       "lank": 11,
@@ -14,7 +14,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": true,
-      "date": "2020_2"
+      "date": "2020-2"
     },
     {
       "lank": 17,
@@ -22,7 +22,7 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "date": "2020_4"
+      "date": "2020-4"
     },
     {
       "lank": 13,
@@ -30,7 +30,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "date": "2020_5"
+      "date": "2020-5"
     }
   ]
 }

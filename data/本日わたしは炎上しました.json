@@ -6,7 +6,7 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": true,
-      "date": "2018_4"
+      "date": "2018-4"
     },
     {
       "lank": 11,
@@ -14,7 +14,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": true,
-      "date": "2018_5"
+      "date": "2018-5"
     },
     {
       "lank": 14,
@@ -22,7 +22,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": true,
-      "date": "2018_6"
+      "date": "2018-6"
     },
     {
       "lank": 13,
@@ -30,7 +30,7 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "date": "2018_7"
+      "date": "2018-7"
     },
     {
       "lank": 7,
@@ -38,7 +38,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "date": "2018_8"
+      "date": "2018-8"
     }
   ]
 }
