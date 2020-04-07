@@ -1,36 +1,36 @@
 {
   "list": [
     {
-      "lank": 17,
+      "order": 17,
       "isCover": false,
       "isColor": true,
       "isDouble": false,
       "isGuest": true,
-      "date": "2020-2"
+      "issue": "2020-2"
     },
     {
-      "lank": 11,
+      "order": 11,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": true,
-      "date": "2020-3"
+      "issue": "2020-3"
     },
     {
-      "lank": 8,
+      "order": 8,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": true,
-      "date": "2020-4"
+      "issue": "2020-4"
     },
     {
-      "lank": 16,
+      "order": 16,
       "isCover": false,
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "date": "2020-5"
+      "issue": "2020-5"
     }
   ]
 }
