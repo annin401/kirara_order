@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "order": 12,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-3"
+    },
+    {
+      "order": 13,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-4"
+    },
+    {
+      "order": 14,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-5"
+    }
+  ]
+}
