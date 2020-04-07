@@ -33,6 +33,10 @@ module.exports = {
     `gatsby-plugin-sharp`,
     // `gatsby-plugin-manifest`,
     {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
+    {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         content: [
