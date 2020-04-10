@@ -14,7 +14,7 @@ const App = () => {
     <Layout>
       {/* client-only-routing */}
       <Router basepath='/app'>
-        <GraphArea path='/:titles' />
+        <GraphArea path='/:urlParams' />
         <Default path='/' />
       </Router>
     </Layout>
