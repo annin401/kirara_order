@@ -14,8 +14,8 @@ type eachStoryInfo = {
   isCover: boolean;
   isColor: boolean;
   isDouble: boolean;
-  isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す 
-}
+  isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す
+};
 
 type comicInfoJson = {
   default: {
@@ -39,7 +39,12 @@ const GraphArea = (props: GraphAreaProps) => {
   const { className, urlParams } = props;
 
   const [comicTitleArray, setComicTitleArray] = React.useState<string[]>([]);
-  const [comicInfoMap, setComicInfoMap] = React.useState(new Map<string, eachStoryInfo[]>());
+  const [comicInfoMap, setComicInfoMap] = React.useState(
+    new Map<string, eachStoryInfo[]>()
+  );
+  const [comicColors, setComicColors] = React.useState(
+    new Map<string, string>()
+  );
 
   React.useEffect(() => {
     // URLパラメータからグラフ化する作品の情報を抜き出し、importして、stateに保存する
@@ -84,7 +89,12 @@ const GraphArea = (props: GraphAreaProps) => {
 
   return (
     <div className={classnames(className)}>
-      <Graph comicTitleArray={comicTitleArray} comicInfoMap={comicInfoMap}/>
+      <Graph
+        comicTitleArray={comicTitleArray}
+        comicInfoMap={comicInfoMap}
+        comicColors={comicColors}
+        setComicColors={setComicColors}
+      />
     </div>
   );
 };

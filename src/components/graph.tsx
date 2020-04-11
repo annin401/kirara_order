@@ -88,10 +88,13 @@ type GraphProps = {
   comicTitleArray: string[];
   // NOTE: スーバーハードコーティング、型を共有する方法を探す
   comicInfoMap: Map<string, ComicInfo[]>;
+  comicColors: Map<string, string>;
+  setComicColors: React.Dispatch<React.SetStateAction<Map<string, string>>>;
 };
 
 const Graph = (props: GraphProps) => {
-  const { comicTitleArray, comicInfoMap } = props;
+  const { comicTitleArray, comicInfoMap, comicColors } = props;
+  const { setComicColors } = props;
 
   const [xDomain, setXDomain] = React.useState({
     oldestIssue: new Date(2015, 0), // NOTE: ハードコーティング、初期値
@@ -101,7 +104,6 @@ const Graph = (props: GraphProps) => {
     x: [new Date(2019, 0), new Date(2019, 11)], // NOTE: ハードコーティング、初期値
     y: [-30, 0], // NOTE: ハードコーティング、初期値
   });
-  const [comicColors, setComicColors] = React.useState(new Map<string, string>());
 
   const graphHeight = 600; // NOTE: ハードコーティング、仮
   const graphWidth = 370; // NOTE: ハードコーティング、仮
@@ -233,8 +235,8 @@ const Graph = (props: GraphProps) => {
         }))}
         style={{
           data: {
-            stroke: lineColors[index]
-          }
+            stroke: lineColors[index],
+          },
         }}
       />
     ));
