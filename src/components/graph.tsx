@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/tailwind.css';
 
 import moment, { Moment } from 'moment';
+import randomcolor from 'randomcolor/randomcolor';
 import {
   VictoryChart,
   VictoryAxis,
@@ -9,7 +10,6 @@ import {
   VictoryLine,
   VictoryTheme,
 } from 'victory';
-import { compileFunction } from 'vm';
 
 // TODO: この関数の名前をもっとわかりやすいものに変える
 function extractDate(dateStr: string) {
@@ -101,6 +101,7 @@ const Graph = (props: GraphProps) => {
     x: [new Date(2019, 0), new Date(2019, 11)], // NOTE: ハードコーティング、初期値
     y: [-30, 0], // NOTE: ハードコーティング、初期値
   });
+  const [comicColors, setComicColors] = React.useState(new Map<string, string>());
 
   const graphHeight = 600; // NOTE: ハードコーティング、仮
   const graphWidth = 370; // NOTE: ハードコーティング、仮
@@ -152,10 +153,33 @@ const Graph = (props: GraphProps) => {
     });
   }, [comicTitleArray, comicInfoMap]);
 
+  React.useEffect(() => {
+    // 作品の折れ線グラフにつける色を決める
+
+    if (comicTitleArray.length === 0) return;
+
+    // 色をランダムで生成。
+    // 背景(白)にあうようにluminisityをdarkにしている
+    // TODO: 色が被らないandとても似た色にならないことを保証する
+    const colors = randomcolor({
+      count: comicTitleArray.length,
+      luminosity: 'dark',
+    });
+    const colorMap = new Map<string, string>();
+
+    comicTitleArray.forEach((title, index) => {
+      colorMap.set(title, colors[index]);
+    });
+
+    setComicColors(colorMap);
+  }, [comicTitleArray]);
+
   const makeLine = () => {
     let lines: [{ x: Date; y: number }[]] = [];
+    let lineColors: string[] = []; // linesと同期してる
 
-    comicInfoMap.forEach(infoArray => {
+    // VictoryLienに渡すデータの配列を生成
+    comicInfoMap.forEach((infoArray, title) => {
       for (let i = 0; i < infoArray.length; ++i) {
         const issue = infoArray[i].issue;
         const order = infoArray[i].order;
@@ -165,7 +189,10 @@ const Graph = (props: GraphProps) => {
             x: moment(issue).toDate(),
             y: order,
           };
+
           const newLine = [newData];
+          const lineColor = comicColors.get(title);
+          lineColors.push(lineColor ? lineColor : '#000000');
 
           lines.push(newLine);
         } else {
@@ -188,6 +215,8 @@ const Graph = (props: GraphProps) => {
               y: order,
             };
             const newLine = [newData];
+            const lineColor = comicColors.get(title);
+            lineColors.push(lineColor ? lineColor : '#000000');
 
             lines.push(newLine);
           }
@@ -202,6 +231,11 @@ const Graph = (props: GraphProps) => {
           x: info.x,
           y: -info.y, // マイナスを忘れない
         }))}
+        style={{
+          data: {
+            stroke: lineColors[index]
+          }
+        }}
       />
     ));
   };
@@ -264,14 +298,6 @@ const Graph = (props: GraphProps) => {
             // tickValuesに負の数を渡しているため、それを正の数として表示
             tickFormat={(order: number) => Math.abs(order)}
           />
-          {/*comicTitleArray.map(title => (
-            <VictoryLine
-              data={comicInfoMap.get(title).map(value => ({
-                x: moment(extractDate(value.issue)).toDate(),
-                y: -value.order,
-              }))}
-            />
-            ))*/}
           {makeLine()}
         </VictoryChart>
       )}
