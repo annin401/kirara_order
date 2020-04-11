@@ -1,108 +1,119 @@
 {
+  "meta": {
+    "title": "ぼっち・ざ・ろっく！"
+  },
   "list": [
     {
-      "order": 1,
+      "order": 13,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": true,
+      "issue": "2018-02"
+    },
+    {
+      "order": 11,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": true,
+      "issue": "2018-03"
+    },
+    {
+      "order": 7,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": true,
+      "issue": "2018-04"
+    },
+    {
+      "order": 13,
       "isCover": false,
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-1"
+      "issue": "2018-05"
     },
     {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
+      "order": 4,
+      "isCover": false,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-2"
+      "issue": "2018-06"
     },
     {
-      "order": 9,
+      "order": 6,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-07"
+    },
+    {
+      "order": 5,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-08"
+    },
+    {
+      "order": 13,
       "isCover": false,
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-3"
+      "issue": "2018-09"
     },
     {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-4"
-    },
-    {
-      "order": 9,
+      "order": 5,
       "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-5"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-6"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-7"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-8"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2018-9"
-    },
-    {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2018-10"
     },
     {
-      "order": 9,
+      "order": 4,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2018-11"
     },
     {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2018-12"
     },
     {
-      "order": 9,
+      "order": 3,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-1"
+      "issue": "2019-01"
+    },
+    {
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-02"
+    },
+    {
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-03"
     },
     {
       "order": 1,
@@ -110,95 +121,95 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-2"
+      "issue": "2019-04"
     },
     {
-      "order": 9,
+      "order": 3,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-3"
+      "issue": "2019-05"
     },
     {
-      "order": 9,
+      "order": 2,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-4"
+      "issue": "2019-06"
     },
     {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": true,
+      "isGuest": false,
+      "issue": "2019-07"
+    },
+    {
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-5"
+      "issue": "2019-08"
     },
     {
-      "order": 9,
+      "order": 3,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-6"
+      "issue": "2019-09"
     },
     {
-      "order": 9,
+      "order": 3,
       "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2019-7"
-    },
-    {
-      "order": 8,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2019-8"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2019-9"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2019-10"
     },
     {
-      "order": 1,
-      "isCover": true,
-      "isColor": true,
+      "order": 3,
+      "isCover": false,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2019-11"
     },
     {
-      "order": 9,
+      "order": 22,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
       "issue": "2019-12"
     },
     {
-      "order": 9,
+      "order": 17,
       "isCover": false,
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-1"
+      "issue": "2020-01"
+    },
+    {
+      "order": 5,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2020-02"
+    },
+    {
+      "order": 2,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2020-03"
     },
     {
       "order": 1,
@@ -206,31 +217,15 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-2"
+      "issue": "2020-04"
     },
     {
-      "order": 9,
+      "order": 2,
       "isCover": false,
-      "isColor": true,
+      "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-3"
-    },
-    {
-      "order": 9,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2020-4"
-    },
-    {
-      "order": 8,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2020-5"
+      "issue": "2020-05"
     }
   ]
 }

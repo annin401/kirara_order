@@ -1,76 +1,63 @@
 {
+  "meta": {
+    "title": "JKすぷらっしゅ！"
+  },
   "list": [
+    {
+      "order": 8,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-01"
+    },
     {
       "order": 12,
       "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": true,
-      "issue": "2019-8"
-    },
-    {
-      "order": 14,
-      "isCover": false,
       "isColor": false,
-      "isDouble": false,
-      "isGuest": true,
-      "issue": "2019-9"
-    },
-    {
-      "order": 8,
-      "isCover": false,
-      "isColor": false,
-      "isDouble": false,
-      "isGuest": true,
-      "issue": "2019-10"
-    },
-    {
-      "order": 13,
-      "isCover": false,
-      "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-12"
+      "issue": "2018-02"
     },
     {
-      "order": 7,
+      "order": 16,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-1"
+      "issue": "2018-03"
     },
     {
-      "order": 8,
+      "order": 15,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-2"
+      "issue": "2018-04"
     },
     {
-      "order": 8,
+      "order": 19,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-3"
+      "issue": "2018-05"
     },
     {
-      "order": 21,
-      "isCover": false,
-      "isColor": true,
-      "isDouble": false,
-      "isGuest": false,
-      "issue": "2020-4"
-    },
-    {
-      "order": 10,
+      "order": 19,
       "isCover": false,
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2020-5"
+      "issue": "2018-06"
+    },
+    {
+      "order": 22,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-07"
     }
   ]
 }

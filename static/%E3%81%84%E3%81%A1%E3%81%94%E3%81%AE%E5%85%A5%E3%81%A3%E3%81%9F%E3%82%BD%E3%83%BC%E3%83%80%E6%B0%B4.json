@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "いちごの入ったソーダ水"
+  },
   "list": [
     {
       "order": 26,
@@ -6,7 +9,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-1"
+      "issue": "2018-01"
     },
     {
       "order": 26,
@@ -14,7 +17,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-2"
+      "issue": "2018-02"
     },
     {
       "order": 25,
@@ -22,7 +25,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-3"
+      "issue": "2018-03"
     }
   ]
 }

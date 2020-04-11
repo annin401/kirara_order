@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "title": "どうして私が美術科に！？"
+  },
+  "list": [
+    {
+      "order": 6,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-01"
+    },
+    {
+      "order": 6,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-02"
+    },
+    {
+      "order": 21,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-03"
+    },
+    {
+      "order": 10,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-04"
+    },
+    {
+      "order": 7,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-05"
+    },
+    {
+      "order": 17,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-06"
+    },
+    {
+      "order": 10,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-07"
+    },
+    {
+      "order": 12,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-08"
+    },
+    {
+      "order": 15,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-09"
+    },
+    {
+      "order": 12,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-10"
+    },
+    {
+      "order": 15,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-11"
+    },
+    {
+      "order": 18,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2018-12"
+    },
+    {
+      "order": 15,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-01"
+    },
+    {
+      "order": 17,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-02"
+    },
+    {
+      "order": 19,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-03"
+    },
+    {
+      "order": 21,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-04"
+    },
+    {
+      "order": 13,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "issue": "2019-05"
+    }
+  ]
+}
