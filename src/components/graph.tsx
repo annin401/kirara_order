@@ -9,7 +9,9 @@ import {
   VictoryLine,
   VictoryTheme,
 } from 'victory';
+import { compileFunction } from 'vm';
 
+// TODO: この関数の名前をもっとわかりやすいものに変える
 function extractDate(dateStr: string) {
   // "YYYY-MM"の形式からオブジェクトに直す
   const splitedStr = dateStr.split('-');
@@ -68,14 +70,14 @@ function makeVirticalTickData(worstOrder: number) {
   return tickArray;
 }
 
-type productionOrderArray = {
+type ComicInfo = {
   issue: string;
   order: number;
   isCover: boolean;
   isColor: boolean;
   isDouble: boolean;
   isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す
-}[];
+};
 
 type zoomDomain = {
   x: [Date, Date];
@@ -85,17 +87,7 @@ type zoomDomain = {
 type GraphProps = {
   comicTitleArray: string[];
   // NOTE: スーバーハードコーティング、型を共有する方法を探す
-  comicInfoMap: Map<
-    string,
-    {
-      issue: string;
-      order: number;
-      isCover: boolean;
-      isColor: boolean;
-      isDouble: boolean;
-      isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す
-    }[]
-  >;
+  comicInfoMap: Map<string, ComicInfo[]>;
 };
 
 const Graph = (props: GraphProps) => {
@@ -158,8 +150,61 @@ const Graph = (props: GraphProps) => {
       ],
       y: [-worstOrder, 0], // マイナスにするのを忘れない！
     });
-
   }, [comicTitleArray, comicInfoMap]);
+
+  const makeLine = () => {
+    let lines: [{ x: Date; y: number }[]] = [];
+
+    comicInfoMap.forEach(infoArray => {
+      for (let i = 0; i < infoArray.length; ++i) {
+        const issue = infoArray[i].issue;
+        const order = infoArray[i].order;
+
+        if (i === 0) {
+          const newData = {
+            x: moment(issue).toDate(),
+            y: order,
+          };
+          const newLine = [newData];
+
+          lines.push(newLine);
+        } else {
+          const beforeIssue = infoArray[i - 1].issue;
+
+          // 前回の月日との差が一ヶ月しかなければ
+          if (moment(issue).isSame(moment(beforeIssue).add(1, 'month'))) {
+            const newData = {
+              x: moment(issue).toDate(),
+              y: order,
+            };
+
+            let lastLine = lines.slice(-1)[0];
+            lastLine.push(newData);
+
+            lines[lines.length - 1] = lastLine;
+          } else {
+            const newData = {
+              x: moment(issue).toDate(),
+              y: order,
+            };
+            const newLine = [newData];
+
+            lines.push(newLine);
+          }
+        }
+      }
+    });
+
+    return lines.map((line, index) => (
+      <VictoryLine
+        key={index}
+        data={line.map(info => ({
+          x: info.x,
+          y: -info.y, // マイナスを忘れない
+        }))}
+      />
+    ));
+  };
 
   return (
     <>
@@ -219,14 +264,15 @@ const Graph = (props: GraphProps) => {
             // tickValuesに負の数を渡しているため、それを正の数として表示
             tickFormat={(order: number) => Math.abs(order)}
           />
-          {/* 　
-          <VictoryLine // 仮
-            data={POArray.map(value => ({
-              x: moment(value.issue).toDate(),
-              y: -value.order,
-            }))}
-          />
-          */}
+          {/*comicTitleArray.map(title => (
+            <VictoryLine
+              data={comicInfoMap.get(title).map(value => ({
+                x: moment(extractDate(value.issue)).toDate(),
+                y: -value.order,
+              }))}
+            />
+            ))*/}
+          {makeLine()}
         </VictoryChart>
       )}
     </>
