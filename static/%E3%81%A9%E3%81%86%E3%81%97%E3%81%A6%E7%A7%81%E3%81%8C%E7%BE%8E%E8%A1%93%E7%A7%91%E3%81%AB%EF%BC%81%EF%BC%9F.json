@@ -9,7 +9,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-1"
+      "issue": "2018-01"
     },
     {
       "order": 6,
@@ -17,7 +17,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-2"
+      "issue": "2018-02"
     },
     {
       "order": 21,
@@ -25,7 +25,7 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-3"
+      "issue": "2018-03"
     },
     {
       "order": 10,
@@ -33,7 +33,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-4"
+      "issue": "2018-04"
     },
     {
       "order": 7,
@@ -41,7 +41,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-5"
+      "issue": "2018-05"
     },
     {
       "order": 17,
@@ -49,7 +49,7 @@
       "isColor": true,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-6"
+      "issue": "2018-06"
     },
     {
       "order": 10,
@@ -57,7 +57,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-7"
+      "issue": "2018-07"
     },
     {
       "order": 12,
@@ -65,7 +65,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-8"
+      "issue": "2018-08"
     },
     {
       "order": 15,
@@ -73,7 +73,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-9"
+      "issue": "2018-09"
     },
     {
       "order": 12,
@@ -105,7 +105,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-1"
+      "issue": "2019-01"
     },
     {
       "order": 17,
@@ -113,7 +113,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-2"
+      "issue": "2019-02"
     },
     {
       "order": 19,
@@ -121,7 +121,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-3"
+      "issue": "2019-03"
     },
     {
       "order": 21,
@@ -129,7 +129,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-4"
+      "issue": "2019-04"
     },
     {
       "order": 13,
@@ -137,7 +137,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2019-5"
+      "issue": "2019-05"
     }
   ]
 }

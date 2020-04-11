@@ -9,7 +9,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-1"
+      "issue": "2018-01"
     },
     {
       "order": 12,
@@ -17,7 +17,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-2"
+      "issue": "2018-02"
     },
     {
       "order": 16,
@@ -25,7 +25,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-3"
+      "issue": "2018-03"
     },
     {
       "order": 15,
@@ -33,7 +33,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-4"
+      "issue": "2018-04"
     },
     {
       "order": 19,
@@ -41,7 +41,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-5"
+      "issue": "2018-05"
     },
     {
       "order": 19,
@@ -49,7 +49,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-6"
+      "issue": "2018-06"
     },
     {
       "order": 22,
@@ -57,7 +57,7 @@
       "isColor": false,
       "isDouble": false,
       "isGuest": false,
-      "issue": "2018-7"
+      "issue": "2018-07"
     }
   ]
 }

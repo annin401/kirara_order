@@ -10,21 +10,34 @@ import {
   VictoryTheme,
 } from 'victory';
 
+function extractDate(dateStr: string) {
+  // "YYYY-MM"の形式からオブジェクトに直す
+  const splitedStr = dateStr.split('-');
+  return {
+    year: Number(splitedStr[0]),
+    month: Number(splitedStr[1]) - 1,
+  };
+}
+
 // issue の意味は「月号(3月号とかの月号)」
-function makeHorizontalTickData(oldestIssue: Moment, latestIssue: Moment) {
+function makeHorizontalTickData(oldestIssue: Date, latestIssue: Date) {
   let tickArray: Date[] = [];
   const addDate = (year: number, month: number) => {
     tickArray.push(new Date(year, month));
   };
 
-  const oldestYear = oldestIssue.year();
-  const newestYear = latestIssue.year();
-  const monthOfOldestYear = oldestIssue.month();
-  const monthOfNewestYear = latestIssue.month();
+  const oldestYear = oldestIssue.getFullYear();
+  const newestYear = latestIssue.getFullYear();
+  const monthOfOldestYear = oldestIssue.getMonth();
+  const monthOfNewestYear = latestIssue.getMonth();
 
   // 横軸で表示する目盛りとして用いるデータを生成
   for (let year = oldestYear; year <= newestYear; ++year) {
-    if (year === oldestYear) {
+    if (year === oldestYear && year === newestYear) {
+      for (let month = monthOfOldestYear; month <= monthOfNewestYear; ++month) {
+        addDate(year, month);
+      }
+    } else if (year === oldestYear) {
       for (let month = monthOfOldestYear; month <= 11; ++month) {
         addDate(year, month);
       }
@@ -88,10 +101,13 @@ type GraphProps = {
 const Graph = (props: GraphProps) => {
   const { comicTitleArray, comicInfoMap } = props;
 
-  const [POArray, setPOArray] = React.useState<productionOrderArray>([]); // NOTE: 仮
+  const [xDomain, setXDomain] = React.useState({
+    oldestIssue: new Date(2015, 0), // NOTE: ハードコーティング、初期値
+    latestIssue: new Date(), // NOTE: ハードコーティング、初期値
+  });
   const [zoomDomain, setZoomDomain] = React.useState<zoomDomain>({
-    x: [new Date(2019, 0), new Date(2019, 11)], // NOTE: ハードコーティング
-    y: [-30, 0], // NOTE: ハードコーティング
+    x: [new Date(2019, 0), new Date(2019, 11)], // NOTE: ハードコーティング、初期値
+    y: [-30, 0], // NOTE: ハードコーティング、初期値
   });
 
   const graphHeight = 600; // NOTE: ハードコーティング、仮
@@ -99,46 +115,56 @@ const Graph = (props: GraphProps) => {
   const worstOrder = 30; // 縦軸で一番したの目盛りの値、正の数で指定
 
   React.useEffect(() => {
-    const title =
-      '%E3%81%93%E3%81%BF%E3%81%A3%E3%81%8F%E3%81%8C%E3%83%BC%E3%82%8B%E3%81%9A'; // NOTE: ハードコーティング
-    import(`../../static/${title}.json`).then(json => {
-      const orderArray = json.default.list;
-      setPOArray(orderArray);
+    // propsで渡ってきたデータから、グラフの大きさを決定する
+    // 起動時は、選択した作品の中で最も最新の月からnヶ月分前までを表示する
+    // nはブラウザの横幅によって変える
 
-      setZoomDomain({
-        x: [
-          moment(orderArray[orderArray.length - 1].issue)
-            .add(-11, 'months') // NOTE: 11ヶ月のところがハードコーティング, 横幅によって変える
-            .toDate(),
-          moment(orderArray[orderArray.length - 1].issue).toDate(),
-        ],
-        y: [-worstOrder, 0], // マイナスにするのを忘れない！
-      });
+    // データが取得できていないときは終了する
+    if (comicInfoMap.size === 0) return;
+
+    // なるだけ古いor新しい日時で初期化する
+    // きららは2002年創刊であるため十分古い月日である
+    let latestIssueInEveryComic = moment(extractDate('2000-1'));
+    let oldestIssueInEveryComic = moment(); // 現在の月日が入る
+
+    comicInfoMap.forEach((value, key) => {
+      const latestIssueInEachComic = moment(
+        extractDate(value[value.length - 1].issue)
+      );
+      if (latestIssueInEachComic.isAfter(latestIssueInEveryComic)) {
+        // 更新
+        latestIssueInEveryComic = moment(latestIssueInEachComic);
+      }
+
+      const oldestIssueInEachComic = moment(extractDate(value[0].issue));
+      if (oldestIssueInEachComic.isBefore(oldestIssueInEveryComic)) {
+        // 更新
+        oldestIssueInEveryComic = moment(oldestIssueInEachComic);
+      }
     });
-  }, []);
 
-  // NOTE: propsからくるオブジェクトの構造次第でこの関数は壊れます
-  // あとで書き換える前提。
-  const getOldestIssue = () => {
-    if (typeof POArray !== 'undefined' && POArray.length !== 0) {
-      return moment(POArray[0].issue);
-    } else {
-      const defaultOldestIssue = moment('2019-1'); // NOTE: ハードコーティング
-      return defaultOldestIssue;
-    }
-  };
-  const getLatestIssue = () => {
-    if (typeof POArray !== 'undefined' && POArray.length !== 0) {
-      return moment(POArray[POArray.length - 1].issue);
-    } else {
-      const defaultLatestIssue = moment('2019-12'); // NOTE: ハードコーティング
-      return defaultLatestIssue;
-    }
-  };
+    setXDomain({
+      oldestIssue: oldestIssueInEveryComic.toDate(),
+      latestIssue: latestIssueInEveryComic.toDate(),
+      // yのdomainを管理しない理由は、zoomDomainの値で固定されるため、管理する必要がないから
+    });
+
+    setZoomDomain({
+      x: [
+        moment(latestIssueInEveryComic) // コピーを作っている
+          .add(-11, 'months') // NOTE: 11ヶ月のところがハードコーティング, 横幅によって変える
+          .toDate(),
+        moment(latestIssueInEveryComic).toDate(),
+      ],
+      y: [-worstOrder, 0], // マイナスにするのを忘れない！
+    });
+
+  }, [comicTitleArray, comicInfoMap]);
 
   return (
     <>
-      {comicTitleArray.length === 0 ? (
+      {/* 必ずcomicInfoMapで確認をとる、comicTitleArrayでは失敗する可能性がある */}
+      {comicInfoMap.size === 0 ? (
         <p>Looding...</p>
       ) : (
         <VictoryChart
@@ -166,8 +192,8 @@ const Graph = (props: GraphProps) => {
             orientation='bottom'
             // 目盛りとして使用するデータを渡す
             tickValues={makeHorizontalTickData(
-              getOldestIssue(),
-              getLatestIssue()
+              xDomain.oldestIssue,
+              xDomain.latestIssue
             )}
             // 目盛りのフォーマットを指定
             // ticlValuesで渡した配列の要素が一つづつ引数に渡される
@@ -193,12 +219,14 @@ const Graph = (props: GraphProps) => {
             // tickValuesに負の数を渡しているため、それを正の数として表示
             tickFormat={(order: number) => Math.abs(order)}
           />
+          {/* 　
           <VictoryLine // 仮
             data={POArray.map(value => ({
               x: moment(value.issue).toDate(),
               y: -value.order,
             }))}
           />
+          */}
         </VictoryChart>
       )}
     </>
