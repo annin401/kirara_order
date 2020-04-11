@@ -8,19 +8,21 @@ import { RouteComponentProps } from '@reach/router';
 // 自作コンポーネント
 import Graph from '../components/graph';
 
+type eachStoryInfo = {
+  issue: string;
+  order: number;
+  isCover: boolean;
+  isColor: boolean;
+  isDouble: boolean;
+  isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す 
+}
+
 type comicInfoJson = {
   default: {
     meta: {
       title: string;
     };
-    list: {
-      issue: string;
-      order: number;
-      isCover: boolean;
-      isColor: boolean;
-      isDouble: boolean;
-      isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す
-    }[];
+    list: eachStoryInfo[];
   };
 };
 
@@ -37,7 +39,7 @@ const GraphArea = (props: GraphAreaProps) => {
   const { className, urlParams } = props;
 
   const [comicTitleArray, setComicTitleArray] = React.useState<string[]>([]);
-  const [comicInfo, setComicInfo] = React.useState({});
+  const [comicInfoMap, setComicInfoMap] = React.useState(new Map<string, eachStoryInfo[]>());
 
   React.useEffect(() => {
     // URLパラメータからグラフ化する作品の情報を抜き出し、importして、stateに保存する
@@ -70,19 +72,19 @@ const GraphArea = (props: GraphAreaProps) => {
         setComicTitleArray(titles);
 
         // useStateでは同期的にstateが更新されないため、一度ローカル変数に全て保存した後、stateを更新する
-        let info = {};
+        let info = new Map<string, eachStoryInfo[]>();
         for (let i = 0; i < titles.length; ++i) {
-          const newComicInfo = { [titles[i]]: downloadedJsons[i].default.list };
-          info = { ...info, ...newComicInfo };
+          // Mapを更新
+          info.set(titles[i], downloadedJsons[i].default.list);
         }
-        setComicInfo(info);
+        setComicInfoMap(info);
       })
       .catch(error => console.log(error));
   }, []);
 
   return (
     <div className={classnames(className)}>
-      <Graph />
+      <Graph comicTitleArray={comicTitleArray} comicInfoMap={comicInfoMap}/>
     </div>
   );
 };

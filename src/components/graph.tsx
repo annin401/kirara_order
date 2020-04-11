@@ -69,10 +69,24 @@ type zoomDomain = {
   y: [number, number];
 };
 
-type GraphProps = {};
+type GraphProps = {
+  comicTitleArray: string[];
+  // NOTE: スーバーハードコーティング、型を共有する方法を探す
+  comicInfoMap: Map<
+    string,
+    {
+      issue: string;
+      order: number;
+      isCover: boolean;
+      isColor: boolean;
+      isDouble: boolean;
+      isGuest: boolean; //　NOTE: 現在の構想ではゲストの情報はいらないためいずれ消す
+    }[]
+  >;
+};
 
 const Graph = (props: GraphProps) => {
-  const {} = props;
+  const { comicTitleArray, comicInfoMap } = props;
 
   const [POArray, setPOArray] = React.useState<productionOrderArray>([]); // NOTE: 仮
   const [zoomDomain, setZoomDomain] = React.useState<zoomDomain>({
@@ -85,7 +99,8 @@ const Graph = (props: GraphProps) => {
   const worstOrder = 30; // 縦軸で一番したの目盛りの値、正の数で指定
 
   React.useEffect(() => {
-    const title = 'いのち短し善せよ乙女'; // NOTE: ハードコーティング
+    const title =
+      '%E3%81%93%E3%81%BF%E3%81%A3%E3%81%8F%E3%81%8C%E3%83%BC%E3%82%8B%E3%81%9A'; // NOTE: ハードコーティング
     import(`../../static/${title}.json`).then(json => {
       const orderArray = json.default.list;
       setPOArray(orderArray);
