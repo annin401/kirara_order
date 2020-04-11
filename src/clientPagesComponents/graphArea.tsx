@@ -7,6 +7,7 @@ import { RouteComponentProps } from '@reach/router';
 
 // 自作コンポーネント
 import Graph from '../components/graph';
+import TitleList from '../components/titleList';
 
 type eachStoryInfo = {
   issue: string;
@@ -89,6 +90,7 @@ const GraphArea = (props: GraphAreaProps) => {
 
   return (
     <div className={classnames(className)}>
+      <TitleList comicTitleArray={comicTitleArray} comicColors={comicColors} />
       <Graph
         comicTitleArray={comicTitleArray}
         comicInfoMap={comicInfoMap}
