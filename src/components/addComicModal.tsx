@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import ReactModal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { navigate } from 'gatsby';
 
 // 自作コンポーネント
 import AddButton from './addButton';
@@ -32,6 +33,21 @@ const AddComicModal = (props: AddComicModalProps) => {
     setSelelectedTitles(copy);
   };
 
+  const handleClickAddButton = () => {
+    const titles = [];
+    for (let item of selectedTitles) {
+      if (item.isSelected) titles.push(item.title);
+    }
+
+    const urlParam = titles.join('-and-');
+
+    // 遷移
+    navigate(`/app/${urlParam}`);
+
+    // モーダルを閉じる
+    onRequestClose();
+  };
+
   return (
     <ReactModal
       isOpen={isOpen}
@@ -43,7 +59,9 @@ const AddComicModal = (props: AddComicModalProps) => {
         <button onClick={onRequestClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
-        <AddButton className='ml-auto'>追加</AddButton>
+        <AddButton className='ml-auto' onClick={handleClickAddButton}>
+          追加
+        </AddButton>
       </div>
       <ul>
         {selectedTitles.map((value, index) => (

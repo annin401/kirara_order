@@ -86,7 +86,7 @@ const GraphArea = (props: GraphAreaProps) => {
         setComicInfoMap(info);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [urlParams]);
 
   return (
     <div className={classnames(className)}>
