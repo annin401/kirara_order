@@ -16,8 +16,9 @@ const App = () => {
 
   return (
     <Layout>
-      <div>
+      <div className='text-right'>
         <Button
+          className='md:px-10 md:py-2 md:text-2xl'
           onClick={() => {
             setIsModalOpen(true);
           }}

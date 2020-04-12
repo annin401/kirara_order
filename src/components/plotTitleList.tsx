@@ -23,6 +23,7 @@ const PlotTitleList = (props: PlotTitleListProps) => {
           key={index}
           title={title}
           color={comicColors.get(title)}
+          className='md:text-2xl'
         />
       ))}
     </ul>

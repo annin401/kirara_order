@@ -18,7 +18,7 @@ const SelectComicListItem = (props: SelectComicListItemProps) => {
 
   return (
     <li
-      className={classnames(className, 'flex py-3 bg-gray-400 rounded')}
+      className={classnames(className, 'flex py-3 bg-gray-400 shadow')}
       onClick={onClick}
     >
       <input type='checkbox' className='mx-4' checked={isSelected} />

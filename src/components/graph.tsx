@@ -106,7 +106,6 @@ const Graph = (props: GraphProps) => {
   });
 
   const graphHeight = 600; // NOTE: ハードコーティング、仮
-  const graphWidth = 370; // NOTE: ハードコーティング、仮
   const worstOrder = 30; // 縦軸で一番したの目盛りの値、正の数で指定
 
   React.useEffect(() => {
@@ -258,11 +257,9 @@ const Graph = (props: GraphProps) => {
               }}
               allowZoom={false}
               zoomDimension='x'
-              responsive={false}
             />
           }
           height={graphHeight}
-          width={graphWidth}
           theme={VictoryTheme.material}
         >
           <VictoryAxis
