@@ -31,10 +31,16 @@ const Layout = (props: LayoutProps) => {
         @media (min-width: 768px) {
           max-width: 768px;
         }
+        @media (min-width: 1024px) {
+          max-width: 1024px;
+        }
+        @media (min-width: 1280px) {
+          max-width: 1280px;
+        }
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main className='px-4 md:px-8'>{children}</main>
+      <main className='px-4 md:px-8 xl:px-16'>{children}</main>
     </div>
   );
 };
