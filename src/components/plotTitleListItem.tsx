@@ -8,13 +8,13 @@ import classnames from 'classnames';
 
 // 自作コンポーネント
 
-type TitleListItemProps = {
+type PlotTitleListItemProps = {
   className?: string;
   title: string;
   color?: string;
 };
 
-const TitleListItem = (props: TitleListItemProps) => {
+const PlotTitleListItem = (props: PlotTitleListItemProps) => {
   const { className, title, color } = props;
 
   const style = {
@@ -35,4 +35,4 @@ const TitleListItem = (props: TitleListItemProps) => {
   );
 };
 
-export default TitleListItem;
+export default PlotTitleListItem;

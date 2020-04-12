@@ -7,7 +7,7 @@ import { RouteComponentProps } from '@reach/router';
 
 // 自作コンポーネント
 import Graph from '../components/graph';
-import TitleList from '../components/titleList';
+import TitleList from '../components/plotTitleList';
 
 type eachStoryInfo = {
   issue: string;
@@ -86,7 +86,7 @@ const GraphArea = (props: GraphAreaProps) => {
         setComicInfoMap(info);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [urlParams]);
 
   return (
     <div className={classnames(className)}>
