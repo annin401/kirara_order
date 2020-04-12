@@ -9,7 +9,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { navigate } from 'gatsby';
 
 // 自作コンポーネント
-import AddButton from './addButton';
+import Button from './button';
 import SelectComicListItem from './selectComicListItem';
 
 import searchIndex from '../data/searchIndex.json';
@@ -59,9 +59,9 @@ const AddComicModal = (props: AddComicModalProps) => {
         <button onClick={onRequestClose}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
-        <AddButton className='ml-auto' onClick={handleClickAddButton}>
+        <Button className='ml-auto' onClick={handleClickAddButton}>
           追加
-        </AddButton>
+        </Button>
       </div>
       <ul>
         {selectedTitles.map((value, index) => (

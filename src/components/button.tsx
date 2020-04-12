@@ -6,13 +6,13 @@ import classnames from 'classnames';
 
 // 自作コンポーネント
 
-type AddButtonProps = {
+type ButtonProps = {
   className?: string;
   children?: React.ReactNode;
   onClick?: () => void;
 };
 
-const AddButton = (props: AddButtonProps) => {
+const Button = (props: ButtonProps) => {
   const { className, children, onClick } = props;
 
   return (
@@ -28,4 +28,4 @@ const AddButton = (props: AddButtonProps) => {
   );
 };
 
-export default AddButton;
+export default Button;
