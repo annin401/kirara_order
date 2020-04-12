@@ -1,0 +1,116 @@
+{
+  "list": [
+    {
+      "lank": 16,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": true,
+      "date": "2019_1"
+    },
+    {
+      "lank": 20,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": true,
+      "date": "2019_2"
+    },
+    {
+      "lank": 17,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": true,
+      "date": "2019_3"
+    },
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_7"
+    },
+    {
+      "lank": 7,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_8"
+    },
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_9"
+    },
+    {
+      "lank": 16,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_10"
+    },
+    {
+      "lank": 8,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_11"
+    },
+    {
+      "lank": 6,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2019_12"
+    },
+    {
+      "lank": 10,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_1"
+    },
+    {
+      "lank": 10,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_2"
+    },
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_3"
+    },
+    {
+      "lank": 5,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_4"
+    },
+    {
+      "lank": 6,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_5"
+    }
+  ]
+}

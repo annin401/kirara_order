@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{"J+Ae":function(s){s.exports=JSON.parse('{"meta":{"title":"いちごの入ったソーダ水"},"list":[{"order":26,"isCover":false,"isColor":false,"isDouble":false,"isGuest":false,"issue":"2018-01"},{"order":26,"isCover":false,"isColor":false,"isDouble":false,"isGuest":false,"issue":"2018-02"},{"order":25,"isCover":false,"isColor":false,"isDouble":false,"isGuest":false,"issue":"2018-03"}]}')}}]);
+//# sourceMappingURL=7-534e30e75b8bb486c0ed.js.map

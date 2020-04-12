@@ -1,0 +1,36 @@
+{
+  "list": [
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": true,
+      "isGuest": true,
+      "date": "2020_1"
+    },
+    {
+      "lank": 11,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": true,
+      "date": "2020_2"
+    },
+    {
+      "lank": 17,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_4"
+    },
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2020_5"
+    }
+  ]
+}

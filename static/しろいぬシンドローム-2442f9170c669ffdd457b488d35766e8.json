@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "lank": 12,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2018_3"
+    },
+    {
+      "lank": 13,
+      "isCover": false,
+      "isColor": true,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2018_4"
+    },
+    {
+      "lank": 14,
+      "isCover": false,
+      "isColor": false,
+      "isDouble": false,
+      "isGuest": false,
+      "date": "2018_5"
+    }
+  ]
+}
