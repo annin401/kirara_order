@@ -1,6 +1,11 @@
 import React from 'react';
-import Header from './header';
+
+// サードパーティーライブラリ
 import { useStaticQuery, graphql } from 'gatsby';
+import { css } from '@emotion/core';
+
+// 自作コンポーネント
+import Header from './header';
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -19,10 +24,15 @@ const Layout = (props: LayoutProps) => {
   `);
 
   return (
-    <>
+    <div
+      className='mx-auto'
+      css={css`
+        max-width: 400px;
+      `}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
-      {children}
-    </>
+      <main className='px-4'>{children}</main>
+    </div>
   );
 };
 
