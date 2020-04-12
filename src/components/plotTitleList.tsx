@@ -5,15 +5,15 @@ import '../styles/tailwind.css';
 import classnames from 'classnames';
 
 // 自作コンポーネント
-import TitleListItem from './titleListItem';
+import TitleListItem from './plotTitleListItem';
 
-type TitleListProps = {
+type PlotTitleListProps = {
   className?: string;
   comicTitleArray: string[];
   comicColors: Map<string, string>;
 };
 
-const TitleList = (props: TitleListProps) => {
+const PlotTitleList = (props: PlotTitleListProps) => {
   const { className, comicTitleArray, comicColors } = props;
 
   return (
@@ -29,4 +29,4 @@ const TitleList = (props: TitleListProps) => {
   );
 };
 
-export default TitleList;
+export default PlotTitleList;
