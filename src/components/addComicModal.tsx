@@ -22,6 +22,16 @@ type AddComicModalProps = {
 const AddComicModal = (props: AddComicModalProps) => {
   const { className, isOpen, onRequestClose } = props;
 
+  const [selectedTitles, setSelelectedTitles] = React.useState(
+    searchIndex.titleList.map(title => ({ title: title, isSelected: false }))
+  );
+
+  const switchItemSelect = (index: number) => {
+    let copy = selectedTitles.slice();
+    copy[index].isSelected = !copy[index].isSelected;
+    setSelelectedTitles(copy);
+  };
+
   return (
     <ReactModal
       isOpen={isOpen}
@@ -36,7 +46,16 @@ const AddComicModal = (props: AddComicModalProps) => {
         <AddButton className='ml-auto'>追加</AddButton>
       </div>
       <ul>
-        <SelectComicListItem comicTitle={'gotiusa'} />
+        {selectedTitles.map((value, index) => (
+          <SelectComicListItem
+            key={index}
+            comicTitle={value.title}
+            isSelected={value.isSelected}
+            onClick={() => {
+              switchItemSelect(index);
+            }}
+          />
+        ))}
       </ul>
     </ReactModal>
   );
