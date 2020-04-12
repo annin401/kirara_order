@@ -7,7 +7,7 @@ import { RouteComponentProps } from '@reach/router';
 
 // 自作コンポーネント
 import Graph from '../components/graph';
-import TitleList from '../components/titleList';
+import TitleList from '../components/plotTitleList';
 
 type eachStoryInfo = {
   issue: string;
