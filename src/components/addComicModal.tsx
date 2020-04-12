@@ -11,6 +11,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import AddButton from './addButton';
 import SelectComicListItem from './selectComicListItem';
 
+import searchIndex from '../data/searchIndex.json';
+
 type AddComicModalProps = {
   className?: string;
   isOpen: boolean;
