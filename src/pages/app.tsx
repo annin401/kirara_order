@@ -7,6 +7,7 @@ import { Router } from '@reach/router';
 import Layout from '../components/layout';
 import AddComicModal from '../components/addComicModal';
 import GraphArea from '../clientPagesComponents/graphArea';
+import Button from '../components/button';
 
 const App = () => {
   const Default = (props: { path: string }) => <p>作品が選択されていません</p>; // 仮, Defauot というコンポーネント名前も仮
@@ -15,13 +16,15 @@ const App = () => {
 
   return (
     <Layout>
-      <button
-        onClick={() => {
-          setIsModalOpen(true);
-        }}
-      >
-        追加
-      </button>
+      <div>
+        <Button
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+        >
+          追加
+        </Button>
+      </div>
       <AddComicModal
         isOpen={isModalOpen}
         onRequestClose={() => {
