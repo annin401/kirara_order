@@ -1,0 +1,4 @@
+/* react-modalでメディアクエリ付きのCSSをきかせる方法が思いつかなかったので生CSSで対処 */
+.modal {
+  max-width: 768px;
+}

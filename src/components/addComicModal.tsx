@@ -3,7 +3,7 @@ import '../styles/tailwind.css';
 
 // サードパーティーライブラリ
 import classnames from 'classnames';
-import ReactModal from 'react-modal';
+import ReactModal, { defaultStyles } from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { navigate } from 'gatsby';
@@ -13,6 +13,7 @@ import Button from './button';
 import SelectComicListItem from './selectComicListItem';
 
 import searchIndex from '../data/searchIndex.json';
+import '../styles/modal.css';
 
 type AddComicModalProps = {
   className?: string;
@@ -22,7 +23,6 @@ type AddComicModalProps = {
 
 const AddComicModal = (props: AddComicModalProps) => {
   const { className, isOpen, onRequestClose } = props;
-
   const [selectedTitles, setSelelectedTitles] = React.useState(
     searchIndex.titleList.map(title => ({ title: title, isSelected: false }))
   );
@@ -53,11 +53,12 @@ const AddComicModal = (props: AddComicModalProps) => {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel='追加する漫画のグラフを選択するモーダル'
-      className={classnames(className)}
+      style={defaultStyles}
+      className='modal'
     >
-      <div className='flex'>
+      <div className='flex mb-4'>
         <button onClick={onRequestClose}>
-          <FontAwesomeIcon icon={faTimes} />
+          <FontAwesomeIcon icon={faTimes} className='text-xl' />
         </button>
         <Button className='ml-auto' onClick={handleClickAddButton}>
           追加
@@ -72,6 +73,7 @@ const AddComicModal = (props: AddComicModalProps) => {
             onClick={() => {
               switchItemSelect(index);
             }}
+            className='mb-1'
           />
         ))}
       </ul>
