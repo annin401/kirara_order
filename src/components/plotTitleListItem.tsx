@@ -28,6 +28,7 @@ const PlotTitleListItem = (props: PlotTitleListItemProps) => {
           background-color: ${color};
           display: inline;
           padding: 0 8px 0 8px;
+          margin-right: 4px;
         `}
       ></div>
       {title}

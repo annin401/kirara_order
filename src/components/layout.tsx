@@ -28,10 +28,13 @@ const Layout = (props: LayoutProps) => {
       className='mx-auto'
       css={css`
         max-width: 400px;
+        @media (min-width: 768px) {
+          max-width: 768px;
+        }
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main className='px-4'>{children}</main>
+      <main className='px-4 md:px-8'>{children}</main>
     </div>
   );
 };
